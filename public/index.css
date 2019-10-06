@@ -1,0 +1,1142 @@
+@font-face {
+    font-family: 'sponge';
+    src: url('./fonts/Some\ Time\ Later.otf');
+}
+
+@keyframes cursor-tap {
+    50% {
+        width: 20%;
+        height: 20%;
+        top: -10%;
+        left: -10%;
+    }
+}
+
+/* Underwater effect:  */
+
+@keyframes imgevento {
+    0%,
+    50%,
+    100% {
+        transform: skew(0deg, 0deg) scale(1.1, 1.1);
+    }
+    
+    25% {
+        transform: skew(1deg, 0.5deg) scale(1.1, 1.1);
+    }
+
+    75% {
+        transform: skew(-1deg, -0.5deg) scale(1.1, 1.1);
+    }
+  }
+
+
+
+body {
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    transform-origin: center center;
+    animation: imgevento 6s linear infinite;
+    cursor: none;
+}
+
+#fullscreen {
+    position: absolute;
+    width: 80%;
+    left: 10%;
+    height: 80%;
+    top: 10%;
+    background-image: url(./img/env/fullscreen.png);
+    background-size: 200% 200%;
+    pointer-events: none;
+}
+
+/* Cursor: */
+
+#follower {
+    position: absolute;
+    bottom: 22vh;
+    right: 20%;
+    width: 10vh;
+    height: 10vh;
+    z-index: 22;
+    pointer-events: none;
+    user-select: none;
+}
+
+.follower-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    background-image: url(./img/env/cursor.png);
+    background-size: 900% 100%;
+    background-position: -300%;
+    user-select: none;
+    pointer-events: none;
+}
+
+#cursor-light {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: ;
+    opacity: 0.5;
+    animation: cursor-tap 1.5s infinite;
+    user-select: none;
+    pointer-events: none;
+}
+
+
+
+
+/* Enviroment:  */
+
+  /* Day time:  */
+
+        #day {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, #007991, #78ffd6);
+            user-select: none;
+            pointer-events: none;
+        }
+
+        #evening {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, #FC575E, #FCE043);
+            user-select: none;
+            pointer-events: none;
+        }
+
+        #night {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, #008080, #191970);
+            user-select: none;
+            pointer-events: none;
+        }
+
+        @keyframes reduce {
+            from {
+                opacity: 1;
+            } 
+            to {
+                opacity: 0;
+            }
+        }
+
+        @keyframes increase {
+            from {
+                opacity: 0;
+            } 
+            to {
+                opacity: 1;
+            }
+        }
+
+
+    /* Grass:  */  
+
+        #grass {
+            position: absolute;
+            padding: 0;
+            margin: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 1;
+            height: 60%;
+            width: 100%;
+            background-image: ;
+            background-size: 500% 100%;
+            background-position: -400% 100%;
+            user-select: none;
+            pointer-events: none;
+            animation: imgevento 5s linear infinite;
+        }
+
+        #grass-feet {
+            position: absolute;
+            opacity: 0.8;
+            width: 50%;
+            height: 22%;
+            bottom: 7.5%;
+            left: 27%;
+            background-image: url(./img/env/feetgrass.png);
+            background-size: 500% 100%;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        /* Switchers:  */
+
+        #switchers {
+            position: absolute;
+            right: 0;
+            top: 5vh;
+            height: 15vh;
+            width: 15vh;
+            user-select: none;
+        }
+
+
+
+        #info-switcher {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            font-family: sponge;
+            font-size: 5vw;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            user-select: none;
+            border-radius: 50%;
+            background-color: teal;
+            color: khaki;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .info-dummy {
+            position: absolute;
+            top: 15%;
+            right: 30%;
+            width: 85%; 
+            height: 85%;
+            pointer-events: all;
+        }
+ 
+        #info-body {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            z-index: 21;
+            background-size: 3800% 100%;
+            background-position: 0;
+            visibility: hidden;
+            user-select: none;
+        }
+
+        .menu {
+            position: absolute;
+            width: 80%;
+            height: 80%;
+            top: 10%;
+            left: 10%;
+            font-size: 5vw;
+            font-family: 'sponge';
+            text-align: center;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        .info-text{
+            position: absolute;
+            font-size: 5vw;
+            text-align: center;
+            width: 80%;
+            left: 10%;
+            top: 15%;
+            user-select: none;
+        }
+
+        .music-switcher {
+            position: absolute;
+            font-size: 5vw;
+            text-align: left;
+            padding-left: 10%;
+            width: 90%;
+            height: 15%;
+            bottom: 55%;
+            user-select: none;
+        }
+
+        .toggle-music-text {
+            position: absolute;
+            left: 10%;
+            top: 0;
+            width: 40%;
+            height: 100%;
+            font-size: 5vw;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            user-select: none;
+        }
+
+
+        .toggle-music {
+            position: absolute;
+            right: 10%;
+            top: 0;
+            width: 40%;
+            height: 100%;
+            font-size: 5vw;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: khaki;
+            user-select: none;
+            pointer-events: all;
+        }
+
+        .toggle-music span {
+            pointer-events: none;
+        }
+
+        .toggle-music:hover {
+            background-color: darkkhaki;
+        }
+
+        .sound-switcher {
+            position: absolute;
+            font-size: 5vw;
+            text-align: left;
+            padding-left: 10%;
+            width: 90%;
+            height: 15%;
+            bottom: 38%;
+            user-select: none;
+        }
+
+
+        .toggle-sound-text {
+            position: absolute;
+            left: 10%;
+            top: 0;
+            width: 40%;
+            height: 100%;
+            font-size: 5vw;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            user-select: none;
+        }
+
+
+        .toggle-sound {
+            position: absolute;
+            right: 10%;
+            top: 0;
+            width: 40%;
+            height: 100%;
+            font-size: 5vw;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background-color: khaki;
+            user-select: none;
+            pointer-events: all;
+        }
+
+        .toggle-sound span {
+            pointer-events: none;
+        }
+
+        .toggle-sound:hover {
+            background-color: darkkhaki;
+        }
+
+        #back {
+            position: absolute;
+            left: 45%;
+            font-size: 5vw;
+            color: teal;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 40%;
+            height: 15%;
+            bottom: 20%;
+            user-select: none;
+            background-color: khaki;
+            user-select: none;
+            pointer-events: all;
+        }
+
+        #back span {
+            pointer-events: none;
+        }
+
+        #about-me {
+            position: absolute;
+            left: 20%;
+            font-size: 10vh;
+            color: teal;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 20%;
+            height: 15%;
+            bottom: 20%;
+            user-select: none;
+            color: khaki;
+            background-color: teal;
+            pointer-events: all;
+        }
+
+        #back:hover {
+            background-color: teal;
+            color: khaki;
+        }
+
+        .link {
+            position: absolute;
+            text-align: center;
+            width: 100%;
+            bottom: 15%;
+            padding: 20px 0;
+            font-size: 4vw;
+            color: teal;
+            text-decoration: underline;
+            border: 2px solid red;
+            visibility: hidden;
+            user-select: none;
+        }
+
+        .link:hover {
+            background-color: khaki;
+        }
+
+
+        .back {
+            padding: 10px;
+            color: teal;
+            visibility: hidden;
+        }
+
+        .back:hover {
+            background-color: khaki;
+        }
+
+
+    /* Wind: */
+
+        #wind-one {
+            position: absolute;
+            opacity: 0.3;
+            z-index: 2;
+            width: 20%;
+            height: 20%;
+            background-image: url(./img/env/windall.png);
+            background-size: 3200% 100%;
+            background-position: -1400%;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        #wind-two {
+            position: absolute;
+            opacity: 0.3;
+            z-index: 2;
+            width: 20%;
+            height: 20%;
+            top: 20%;
+            background-image: url(./img/env/windall.png);
+            background-size: 3200% 100%;
+            background-position: -1400%;
+            user-select: none;
+            pointer-events: none;
+        }
+
+
+    /* Clouds:  */
+
+        #sky {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            user-select: none;
+            pointer-events: none;
+            animation: imgevento 6s linear infinite;
+        }
+
+        .sky-1 {
+            position: absolute;
+            width: 20%;
+            height: 30%;
+            top: 5%;
+            left: 2%;
+            background-image: url(./img/sky/sky1.gif);
+            background-size: 100% 100%;
+            opacity: 0.8;
+            animation-name: sky-1;
+            animation-duration: 10000s;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        @keyframes sky-1 {
+            50% {
+                left: 12%;
+                top: 6%;
+            }
+
+            to {
+                left: 2%;
+                top: 5%;
+            }
+        }
+
+        .sky-2 {
+            position: absolute;
+            width: 30%;
+            height: 90%;
+            top: -30%;
+            left: 22%;
+            background-image: url(./img/sky/sky2.gif);
+            background-size: 100% 100%;
+            opacity: 0.6;
+            animation-name: sky-2;
+            animation-duration: 11000s;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        @keyframes sky-2 {
+            50% {
+                left: 22%;
+                top: -32%;
+            }
+
+            to {
+                left: 32%;
+                top: -30%;
+            }
+        }
+
+        .sky-3 {
+            position: absolute;
+            width: 30%;
+            height: 40%;
+            top: 10%;
+            left: 52%;
+            background-image: url(./img/sky/sky3.gif);
+            background-size: 100% 100%;
+            opacity: 0.7;
+            animation-name: sky-3;
+            animation-duration: 12000s;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        @keyframes sky-3 {
+            50% {
+                left: 62%;
+                top: 8%;
+            }
+
+            to {
+                left: 52%;
+                top: 10%;
+            }
+        }
+
+        .sky-4 {
+            position: absolute;
+            width: 30%;
+            height: 60%;
+            top: -20%;
+            left: 72%;
+            background-image: url(./img/sky/sky4.gif);
+            background-size: 100% 100%;
+            opacity: 0.6;
+            animation-name: sky-4;
+            animation-duration: 13000s;
+            user-select: none;
+            pointer-events: none;
+        }
+
+        @keyframes sky-4 {
+            50% {
+                left: 72%;
+                top: -32%;
+            }
+
+            to {
+                left: 82%;
+                top: -30%;
+            }
+        }
+
+
+/* Objects:  */
+
+    .jellyfish {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: url(./img/jelly/jellyfish.png);
+        background-size: 1200% 100%;
+        pointer-events: none;
+    }
+
+    /* Jellyfish animation: */
+        @keyframes jellyfish-1 {
+            from {
+                right: -40vw;
+            }
+            to {
+                right: 140vw;
+            }
+        }
+
+        @keyframes jellyfish-2 {
+            from {
+                right: 140vw;
+            }
+            to {
+                right: -140vw;
+            }
+        }
+
+    /* Spongebob: */
+    #bubbling-bob {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 30vh;
+        width: 40vw;
+        user-select: none;
+    }
+
+    #bob {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        height: 35vh;
+        width: 28vh;
+        background-image: url(./img/bob/spongebob.png);
+        background-size: 1000% 100%;
+        user-select: none;
+    }
+
+    #bob-dummy {
+        position: absolute;
+        z-index: 7;
+        right: 6vh;
+        bottom: 9vh;
+        height: 20vh;
+        width: 16vh;
+        user-select: none;
+    }
+
+
+    #bubbling {
+        position: absolute;
+        user-select: none;
+        width: 50%;
+        height: 40%;
+        left: 77%;
+        top: 18%;
+        opacity: 0.4;
+        background-image: url(./img/bob/bubblebang.png);
+        background-size: 1300% 100%;
+        background-position: -400%;
+    }
+
+    /* Bubble:  */
+    #bubble {
+        position: absolute;
+        width: 10vh;
+        height: 10vh;
+        right: -50%;
+        top: 10%;
+    }
+
+    .bubble {
+
+    }
+
+    .bubble-border {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        left: -2px;
+        top: -2px;
+    }
+
+    .bubble-mask {
+        position: absolute;
+        width: 80%;
+        height: 80%;
+        border-radius: 50%;
+        opacity: 0.1;
+    }
+
+    /* Bubble fly animation:  */
+    @keyframes bubble-fly-1 {
+        from {
+
+        }
+        10% {
+            right: -30%;
+        }
+
+        25% {
+            right: -35%;
+        }
+
+        to {
+            top: -90vh;
+            right: 30%;
+        }
+    }
+
+    @keyframes bubble-fly-2 {
+        from {
+            
+        }
+        10% {
+            right: -50%;
+        }
+
+        25% {
+            right: -35%;
+        }
+
+        to {
+            top: -90vh;
+            right: 90%;
+        }
+    }
+
+    @keyframes bubble-fly-3 {
+        from {
+            
+        }
+        10% {
+            right: -20%;
+        }
+
+        25% {
+            right: -45%;
+        }
+
+        to {
+            top: -90vh;
+            right: 20%;
+        }
+    }
+
+    @keyframes bubble-fly-4 {
+        from {
+            
+        }
+        10% {
+            right: -35%;
+        }
+
+        25% {
+            right: -30%;
+        }
+
+        50% {
+            right: 0%;
+        }
+
+        to {
+            top: -90vh;
+            right: 120%;
+        }
+    }
+    
+
+    @keyframes bubble-fly-5 {
+        from {
+            
+        }
+        10% {
+            right: -20%;
+        }
+
+        25% {
+            right: 0%;
+        }
+
+        50% {
+            right: 50%;
+        }
+
+        to {
+            top: -90vh;
+            right: 120%;
+        }
+    
+    }
+
+    @keyframes bubble-fly-6 {
+        from {
+
+        }
+
+        10% {
+            right: -20%;
+        }
+
+        25% {
+            right: 20%;
+        }
+
+        50% {
+            right: 10%;
+        }
+
+        75% {
+            right: -30%
+        }
+
+        to {
+            top: -90vh;
+            right: -70%;
+        }
+    }
+
+    @keyframes bubble-fly-7 {
+        from {
+            
+        }
+
+        10% {
+            right: -20%;
+        }
+
+        25% {
+            right: 20%;
+        }
+
+        50% {
+            right: -10%;
+        }
+
+        75% {
+            right: -40%
+        }
+
+        to {
+            top: -90vh;
+            right: -90%;
+        }
+    }
+
+    @keyframes bubble-fly-8 {
+        from {
+            
+        }
+        10% {
+            right: -30%;
+        }
+
+        25% {
+            right: -35%;
+        }
+
+        50% {
+            right: 5%;
+        }
+
+        75% {
+            right: -30%
+        }
+
+        to {
+            top: -90vh;
+            right: -90%;
+        }
+    }
+
+    @keyframes bubble-fly-9 {
+        from {
+            
+        }
+        10% {
+            right: -40%;
+        }
+
+        25% {
+            right: 5%;
+        }
+
+        50% {
+            right: -45%;
+        }
+
+        75% {
+            right: -5%
+        }
+
+        to {
+            top: -90vh;
+            right: 70%;
+        }
+    }
+
+    /* Jellyfish bubblahz: */
+    @keyframes bubblahz {
+        to {
+            top: -200px;
+        }
+    }
+
+    /* Splash animation:  */
+
+
+.splash-1 {
+
+}
+
+.splash-2 {
+
+}
+
+.splash-3 {
+ 
+}
+
+.splash-4 {
+
+}
+
+.bubble-light {
+
+}
+
+
+
+@keyframes splash-1-1 {
+    from {
+
+    }
+
+    to {
+        top: 0;
+        left: 10%;
+        width: 1%;
+        height: 1%;
+    }
+}
+
+
+@keyframes splash-1-2 {
+    from {
+
+    }
+
+    to {
+        top: 10%;
+        left: 2%;
+        width: 1%;
+        height: 1%;
+    }
+}
+
+@keyframes splash-1-3 {
+    from {
+
+    }
+
+    to {
+        top: 20%;
+        left: -5%;
+        width: 1%;
+        height: 1%;
+    }
+}
+
+
+/* Second splash */
+
+@keyframes splash-2-1 {
+    from {
+
+    }
+
+    to {
+        top: 0;
+        right: 10%;
+        width: 1%;
+        height: 1%;
+    }
+}
+
+@keyframes splash-2-2 {
+    from {
+        
+    }
+
+    to {
+        top: 10%;
+        right: -10%;
+        width: 1%;
+        height: 1%;
+    }
+}
+
+
+@keyframes splash-2-3 {
+    from {
+        
+    }
+
+    to {
+        top: 15%;
+        right: -30%;
+        width: 1%;
+        height: 1%;
+    }
+}
+
+/* Third splash: */
+
+@keyframes splash-3-1 {
+    from {
+
+    }
+
+    to {
+        bottom: 0;
+        right: 10%;
+        width: 1%;
+        height: 1%;
+    }
+}
+
+@keyframes splash-3-2 {
+    from {
+        
+    }
+
+    to {
+        bottom: 0%;
+        right: -10%;
+        width: 1%;
+        height: 1%;
+    }
+}
+
+@keyframes splash-3-3 {
+    from {
+        
+    }
+
+    to {
+        bottom: 15%;
+        right: 5%;
+        width: 1%;
+        height: 1%;
+    }
+}
+
+/* Fourth splash: */
+
+@keyframes splash-4-1 {
+    from {
+
+    }
+
+    to {
+        bottom: 0;
+        left: 10%;
+        width: 1%;
+        height: 1%;
+    }
+}
+
+@keyframes splash-4-2 {
+    from {
+        
+    }
+
+    to {
+        bottom: 0%;
+        left: -10%;
+        width: 1%;
+        height: 1%;
+    }
+}
+
+@keyframes splash-4-3 {
+    from {
+        
+    }
+
+    to {
+        bottom: 15%;
+        left: 5%;
+        width: 1%;
+        height: 1%;
+    }
+}
+
+
+
+
+/* Game div:  */
+#game-div {
+    position: absolute;
+    z-index: 4;
+    width: 80vw;
+    height: 75vh;
+    left: 10%;
+    top: 10%;
+    visibility: visible;
+}
+
+@media screen and (min-aspect-ratio: 1/1) {
+    #follower {
+        width: 15vh;
+        height: 15vh;
+        right: 10%;
+    }
+
+    #switchers {
+        height: 20vh;
+        width: 20vh;
+    }
+
+    #bob {
+        width: 32vh;
+        height: 40vh;
+    }
+
+    #bob-dummy {
+        height: 25vh;
+        width: 20vh;
+    }
+
+    #info-switcher {
+        font-size: 4vw;
+    }
+
+    #about-app {
+        background-size: 100% 100%;
+    }
+}
